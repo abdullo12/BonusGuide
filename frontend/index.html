@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Benefits Platform</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1>Платформа для Студентов</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Главная</a></li>
+                    <li><a href="#benefits">Выплаты</a></li>
+                    <li><a href="#tools">Инструменты</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="container">
+            <h2>Добро пожаловать на Платформу для Студентов</h2>
+            <p>Единое место для всей информации о студенческих выплатах, возможностях и инструментах, которые помогут вам в вашем академическом пути.</p>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits">
+        <div class="container">
+            <h2>Доступные Выплаты</h2>
+            <ul>
+                <li>Стипендии</li>
+                <li>Гранты и финансовая помощь</li>
+           </ul>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools">
+        <div class="container">
+            <h2>Инструменты и Ресурсы</h2>
+            <p>Воспользуйтесь нашими инструментами для расчета возможных выплат, сортировки возможностей и планирования вашего академического расписания.</p>
+            <div class="tool-list">
+                <div class="tool-item">
+                    <h3>Калькулятор Выплат</h3>
+                    <p>Позволяет рассчитывать возможные выплаты на основе вашего статуса и достижений.</p>
+                </div>
+                <div class="tool-item">
+                    <h3>Сортировка Возможностей</h3>
+                    <p>Фильтруйте и сортируйте доступные возможности по различным критериям.</p>
+                </div>
+                <div class="tool-item">
+                    <h3>Календарь</h3>
+                    <p>Планируйте свои мероприятия и следите за важными датами.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+	<section id="benefits">
+    <div class="container">
+        <h2>Подбор Выплат</h2>
+        <form action="/submit" method="POST">
+    <label for="course">Курс обучения:</label>
+    <input type="number" id="course" name="course" min="1" max="4" required><br><br>
+
+    <label for="gpa">Средний балл (ГПА):</label>
+    <input type="number" step="0.01" id="gpa" name="gpa" min="1" max="5" required><br><br>
+
+    <label for="research">Участвовали ли в научной деятельности:</label>
+    <select id="research" name="research" required>
+        <option value="" disabled selected>Выберите</option>
+        <option value="Да">Да</option>
+        <option value="Нет">Нет</option>
+    </select><br><br>
+
+    <label for="internship">Проходили ли практику:</label>
+    <select id="internship" name="internship" required>
+        <option value="" disabled selected>Выберите</option>
+        <option value="Да">Да</option>
+        <option value="Нет">Нет</option>
+    </select><br><br>
+
+    <button type="submit">Найти Выплаты</button>
+</form>
+
+    </div>
+</section>
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Связаться с Нами</h2>
+            <form>
+                <label for="name">Имя:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Сообщение:</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Платформа для Студентов. Все права защищены.</p>
+        </div>
+    </footer>
+	
+</body>
+</html>

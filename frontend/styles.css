@@ -1,157 +1,152 @@
-/* Основные стили */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    color: #24292e;
-    background-color: #f6f8fa;
 }
 
-/* Header */
-header {
-    background-color: #24292e;
-    color: white;
-    padding: 16px 32px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-}
-
-header h1 {
-    font-size: 2rem;
-    font-weight: 600;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    margin-left: 20px;
-}
-
-nav ul li a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #0366d6; /* Акцентный цвет GitHub */
-}
-
-/* Контейнер */
 .container {
     width: 80%;
-    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* Секции */
+/* Логотипы и заголовок */
+.header-logo {
+    background-color: white; /* Белый фон для логотипов и заголовка */
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-logo .logo {
+    width: 600px; /* Размер логотипов */
+    height: auto;
+    margin-left: 20px; /* Отступ слева */
+}
+
+.header-logo .logo-university {
+    width: 130px; /* Размер для второго логотипа */
+    height: auto;
+    margin-left: 15px;
+}
+
+.header-logo h1 {
+    color: #333; /* Синий цвет заголовка */
+    margin: 0;
+    font-size: 22px;
+    text-align: center;
+    flex-grow: 1; /* Заголовок растягивается */
+}
+
+/* Навигационное меню */
+.header-menu {
+    background-color: #2F4BA7
+
+; /* Синий фон для меню */
+    padding: 10px 0;
+    text-align: center;
+}
+
+.header-menu nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.header-menu nav ul li {
+    margin-right: 20px;
+}
+
+.header-menu nav ul li a {
+    color: white; /* Белый цвет для текста в меню */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.header-menu nav ul li a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #2F4BA7;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer .footer-logo {
+    width: 50px;
+    margin-bottom: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
+footer p {
+    margin-top: 10px;
+}
+
 section {
     padding: 40px 0;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(27, 31, 35, 0.1);
-    margin-bottom: 40px;
 }
 
 h2 {
-    font-size: 1.8rem;
-    font-weight: 600;
+    color: #003366;
+    text-align: center;
     margin-bottom: 20px;
-    color: #24292e;
 }
 
-/* Формы */
-form {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
+.tool-list {
     display: flex;
-    flex-direction: column;
-    background-color: #ffffff;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.tool-item {
+    background-color: #e6e6e6;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(27, 31, 35, 0.12);
+    width: 30%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-form label {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 10px;
+.tool-item h3 {
+    color: #002f6c;
 }
 
-form input, form select {
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #e1e4e8;
-    border-radius: 6px;
-    font-size: 1rem;
-    background-color: #f6f8fa;
-    transition: border-color 0.2s ease;
+form {
+    background-color: #e6e6e6;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    margin: 20px auto;
 }
 
-form input:focus, form select:focus {
-    border-color: #0366d6;
-    outline: none;
+form input, form select, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 form button {
-    background-color: #2ea44f;
+    width: 100%;
+    padding: 10px;
+    background-color: #2F4BA7;
     color: white;
-    padding: 12px;
     border: none;
-    border-radius: 6px;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease;
 }
 
 form button:hover {
-    background-color: #22863a;
-    box-shadow: 0 1px 3px rgba(27, 31, 35, 0.15);
-}
-
-/* Footer */
-footer {
-    background-color: #24292e;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    font-size: 0.9rem;
-}
-
-/* Иконки и анимации */
-.icon:hover {
-    transform: scale(1.1);
-    transition: transform 0.2s ease-in-out;
-}
-
-/* Адаптивность */
-@media (max-width: 768px) {
-    .container {
-        width: 90%;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    form {
-        width: 100%;
-    }
+    background-color: #2F4BA7;
 }

@@ -3,14 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Benefits Platform</title>
+    <title>Платформа для Студентов</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <!-- Header Section -->
     <header>
-        <div class="container">
+        <!-- Логотипы и заголовок -->
+        <div class="header-logo">
+            <div class="logo-container">
+                <img src="{{ url_for('static', filename='images/logo_flagstripe_mini.png') }}" alt="Логотип Минтранса" class="logo">            
+	    </div>
             <h1>Платформа для Студентов</h1>
+        </div>
+
+        <!-- Меню навигации -->
+        <div class="header-menu">
             <nav>
                 <ul>
                     <li><a href="#home">Главная</a></li>
@@ -21,7 +29,6 @@
             </nav>
         </div>
     </header>
-
     <!-- Home Section -->
     <section id="home">
         <div class="container">
@@ -62,35 +69,37 @@
             </div>
         </div>
     </section>
-	<section id="benefits">
-    <div class="container">
-        <h2>Подбор Выплат</h2>
-        <form action="/submit" method="POST">
-    <label for="course">Курс обучения:</label>
-    <input type="number" id="course" name="course" min="1" max="4" required><br><br>
 
-    <label for="gpa">Средний балл (ГПА):</label>
-    <input type="number" step="0.01" id="gpa" name="gpa" min="1" max="5" required><br><br>
+    <!-- Benefits Selection Section -->
+    <section id="benefits">
+        <div class="container">
+            <h2>Подбор Выплат</h2>
+            <form action="/submit" method="POST">
+                <label for="course">Курс обучения:</label>
+                <input type="number" id="course" name="course" min="1" max="4" required><br><br>
 
-    <label for="research">Участвовали ли в научной деятельности:</label>
-    <select id="research" name="research" required>
-        <option value="" disabled selected>Выберите</option>
-        <option value="Да">Да</option>
-        <option value="Нет">Нет</option>
-    </select><br><br>
+                <label for="gpa">Средний балл (ГПА):</label>
+                <input type="number" step="0.01" id="gpa" name="gpa" min="1" max="5" required><br><br>
 
-    <label for="internship">Проходили ли практику:</label>
-    <select id="internship" name="internship" required>
-        <option value="" disabled selected>Выберите</option>
-        <option value="Да">Да</option>
-        <option value="Нет">Нет</option>
-    </select><br><br>
+                <label for="research">Участвовали ли в научной деятельности:</label>
+                <select id="research" name="research" required>
+                    <option value="" disabled selected>Выберите</option>
+                    <option value="Да">Да</option>
+                    <option value="Нет">Нет</option>
+                </select><br><br>
 
-    <button type="submit">Найти Выплаты</button>
-</form>
+                <label for="internship">Проходили ли практику:</label>
+                <select id="internship" name="internship" required>
+                    <option value="" disabled selected>Выберите</option>
+                    <option value="Да">Да</option>
+                    <option value="Нет">Нет</option>
+                </select><br><br>
 
-    </div>
-</section>
+                <button type="submit">Найти Выплаты</button>
+            </form>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
@@ -112,10 +121,10 @@
 
     <!-- Footer Section -->
     <footer>
-        <div class="container">
+        <div class="container">c
+            <img src="images/unnamed.png" alt="Логотип" class="footer-logo">
             <p>&copy; 2024 Платформа для Студентов. Все права защищены.</p>
         </div>
     </footer>
-	
 </body>
 </html>

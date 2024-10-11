@@ -1,12 +1,12 @@
-
 import sqlite3
 from flask import Flask, request, render_template
+import os
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='../frontend', static_folder='../frontend')
 
 # Функция для подключения к базе данных
 def get_db_connection():
-    conn = sqlite3.connect('scholarships.db')
+    conn = sqlite3.connect('../backend/scholarships.db')
     conn.row_factory = sqlite3.Row
     return conn
 

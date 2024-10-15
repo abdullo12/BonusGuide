@@ -1,26 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Результаты Стипендий</title>
+    <title>Результаты подбора стипендий</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>Результаты подбора стипендий</h1>
+    <!-- Основной контейнер -->
+    <div class="results-container">
+        <h1>Результаты подбора стипендий</h1>
 
-    <h2>Вы уже можете претендовать на:</h2>
-    <ul>
-        {% for scholarship in scholarships.eligible %}
-            <li>{{ scholarship }}</li>
-        {% endfor %}
-    </ul>
+        <!-- Блок для отображения подходящих стипендий -->
+        <h2>Вы уже можете претендовать на:</h2>
+        <ul>
+            {% if scholarships.eligible %}
+                {% for scholarship in scholarships.eligible %}
+                    <li class="eligible-scholarships">{{ scholarship }}</li>
+                {% endfor %}
+            {% else %}
+                <li class="no-results">К сожалению, подходящих стипендий не найдено</li>
+            {% endif %}
+        </ul>
 
-    <h2>Вы можете претендовать, если выполните дополнительные условия:</h2>
-    <ul>
-        {% for scholarship in scholarships.potential %}
-            <li>{{ scholarship }}</li>
-        {% endfor %}
-    </ul>
+        <!-- Блок для отображения потенциальных стипендий -->
+        <h2>Вы можете претендовать, если выполните дополнительные условия:</h2>
+        <ul>
+            {% if scholarships.potential %}
+                {% for scholarship in scholarships.potential %}
+                    <li class="potential-scholarships">{{ scholarship }}</li>
+                {% endfor %}
+            {% else %}
+                <li class="no-results">Нет дополнительных стипендий для отображения</li>
+            {% endif %}
+        </ul>
+    </div>
 </body>
 </html>

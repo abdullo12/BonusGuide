@@ -2,11 +2,11 @@ import sqlite3
 from flask import Flask, request, render_template
 import os
 
-app = Flask(__name__, template_folder='../frontend', static_folder='../frontend')
+app = Flask(__name__, static_folder='static', template_folder='../frontend')
 
 # Функция для подключения к базе данных
 def get_db_connection():
-    conn = sqlite3.connect('../backend/scholarships.db')
+    conn = sqlite3.connect('backend/scholarships.db')
     conn.row_factory = sqlite3.Row
     return conn
 
@@ -21,8 +21,15 @@ def match_scholarships():
 
     # Подключаемся к базе данных
     conn = get_db_connection()
-    scholarships = conn.execute('SELECT * FROM scholarships WHERE course = ?', (course,)).fetchall()
+    scholarships = conn.execute('SELECT * FROM scholarships WHERE course = ? OR course = "4 и выше"', (course,)).fetchall()
     conn.close()
+    # Checking all available scholarships in the database
+    conn = get_db_connection()
+    all_scholarships = conn.execute('SELECT * FROM scholarships').fetchall()
+    scholarships_list = [dict(scholarship) for scholarship in all_scholarships]  # Преобразование в словарь
+    print(f"Все стипендии: {scholarships_list}")
+    conn.close()
+
 
     matched_scholarships = {
         "eligible": [],

@@ -43,7 +43,7 @@
             <h2>Доступные Выплаты</h2>
             <ul>
                 <li>Стипендии</li>
-                <li>Гранты и финансовая помощь</li>
+                <li>Гранты и финансовая помощь от университета</li>
            </ul>
         </div>
     </section>
@@ -75,28 +75,74 @@
         <div class="container">
             <h2>Подбор Выплат</h2>
             <form action="/submit" method="POST">
-                <label for="course">Курс обучения:</label>
-                <input type="number" id="course" name="course" min="1" max="4" required><br><br>
+    <!-- Курс обучения -->
+    <label for="course">Курс обучения:</label>
+    <input type="number" id="course" name="course" min="1" max="5" required><br><br>
 
-                <label for="gpa">Средний балл (ГПА):</label>
-                <input type="number" step="0.01" id="gpa" name="gpa" min="1" max="5" required><br><br>
+    <!-- Средний балл (ГПА) -->
+    <label for="gpa">Средний балл (ГПА):</label>
+    <input type="number" step="0.01" id="gpa" name="gpa" min="1" max="5" required><br><br>
 
-                <label for="research">Участвовали ли в научной деятельности:</label>
-                <select id="research" name="research" required>
-                    <option value="" disabled selected>Выберите</option>
-                    <option value="Да">Да</option>
-                    <option value="Нет">Нет</option>
-                </select><br><br>
+    <!-- Форма обучения -->
+    <label for="education_form">Форма обучения:</label>
+    <select id="education_form" name="education_form" required>
+        <option value="" disabled selected>Выберите</option>
+        <option value="Очная">Очная</option>
+        <option value="Заочная">Заочная</option>
+    </select><br><br>
 
-                <label for="internship">Проходили ли практику:</label>
-                <select id="internship" name="internship" required>
-                    <option value="" disabled selected>Выберите</option>
-                    <option value="Да">Да</option>
-                    <option value="Нет">Нет</option>
-                </select><br><br>
+    <!-- Гражданство -->
+    <label for="citizenship">Иностранное гражданство:</label>
+    <select id="citizenship" name="citizenship" required>
+        <option value="" disabled selected>Выберите</option>
+        <option value="Да">Да</option>
+        <option value="Нет">Нет</option>
+    </select><br><br>
 
-                <button type="submit">Найти Выплаты</button>
-            </form>
+    <!-- Научная деятельность -->
+    <label for="research">Участвовали ли в научной деятельности:</label>
+    <select id="research" name="research" required>
+        <option value="" disabled selected>Выберите</option>
+        <option value="Да">Да</option>
+        <option value="Нет">Нет</option>
+    </select><br><br>
+
+    <!-- Общественная деятельность -->
+    <label for="social_activity">Участвовали ли в общественной деятельности:</label>
+    <select id="social_activity" name="social_activity" required>
+        <option value="" disabled selected>Выберите</option>
+        <option value="Да">Да</option>
+        <option value="Нет">Нет</option>
+    </select><br><br>
+
+    <!-- Спортивные достижения -->
+    <label for="sports_activity">Имеете ли спортивные достижения:</label>
+    <select id="sports_activity" name="sports_activity" required>
+        <option value="" disabled selected>Выберите</option>
+        <option value="Да">Да</option>
+        <option value="Нет">Нет</option>
+    </select><br><br>
+
+    <!-- Социальный статус -->
+    <label for="social_status">Имеете ли вы особый социальный статус:</label>
+    <select id="social_status" name="social_status" required>
+        <option value="" disabled selected>Выберите</option>
+        <option value="Дети-сироты">Дети-сироты</option>
+        <option value="Инвалиды">Инвалиды</option>
+        <option value="Нет">Нет</option>
+    </select><br><br>
+
+    <!-- Прохождение практики -->
+    <label for="internship">Проходили ли практику:</label>
+    <select id="internship" name="internship" required>
+        <option value="" disabled selected>Выберите</option>
+        <option value="Да">Да</option>
+        <option value="Нет">Нет</option>
+    </select><br><br>
+
+    <button type="submit">Найти Выплаты</button>
+</form>
+
         </div>
     </section>
 
@@ -119,12 +165,12 @@
         </div>
     </section>
 
-    <!-- Footer Section -->
     <footer>
-        <div class="container">c
-            <img src="images/unnamed.png" alt="Логотип" class="footer-logo">
+        <div class="container">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Логотип" class="footer-logo">
             <p>&copy; 2024 Платформа для Студентов. Все права защищены.</p>
         </div>
     </footer>
+    
 </body>
 </html>
